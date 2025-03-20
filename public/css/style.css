@@ -1,0 +1,657 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo-name {
+    color: #fe424d;
+    font-family: "Kanit", serif;
+    font-weight: 700;
+    font-size: 2rem;
+    display: inline;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    height: 4rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(255, 206, 206);
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 3rem;
+}
+
+.nav-link {
+    color: #303030 !important;
+}
+
+/* search */
+
+.search-form {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    padding: 0 1rem 0 1rem;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+}
+
+.search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.search-inp {
+    border-radius: 25px;
+    width: 20rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 0.8rem;
+}
+
+/* moving border */
+/* Base Navbar Link Style */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Space between links */
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: #000;
+    /* Default text color */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    /* Smooth color transition */
+    overflow: hidden;
+    /* Ensure pseudo-elements don't overflow */
+}
+
+/* Moving Reddish Border Effect */
+.nav-link::before,
+.nav-link::after,
+.nav-link span::before,
+.nav-link span::after {
+    content: '';
+    position: absolute;
+    background-color: #ff969b;
+    /* Reddish color */
+    transition: all 0.4s ease-in-out;
+    /* Smooth transition */
+}
+
+/* Top Border */
+.nav-link::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+}
+
+/* Bottom Border */
+.nav-link::after {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+}
+
+/* Left Border */
+.nav-link span::before {
+    top: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+}
+
+/* Right Border */
+.nav-link span::after {
+    bottom: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+    color: #ff424d;
+    /* Change text color on hover */
+}
+
+.nav-link:hover::before {
+    left: 0;
+}
+
+.nav-link:hover::after {
+    right: 0;
+}
+
+.nav-link:hover span::before {
+    top: 0;
+}
+
+.nav-link:hover span::after {
+    bottom: 0;
+}
+
+/* moving border over */
+
+
+/*  Footer */
+
+.f-info-links {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    display: flex;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Style for the modal */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    position: relative;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal b {
+    display: inline !important;
+}
+
+.footer-anchor a {
+    text-decoration: none;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 0px rgba(255, 142, 142, 0.5);
+    /* Initial subtle glow */
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+    /* Smooth transition */
+}
+
+.listing-card:hover {
+    box-shadow: 0 0 5px 2px rgba(255, 142, 142, 0.8);
+    /* Enhanced glowing effect */
+    transform: translateY(-5px);
+    /* Lift the card slightly */
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Show Page */
+
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Space between buttons */
+}
+
+.btns .btn {
+    flex: 1 1 auto;
+    /* Allow buttons to grow and shrink */
+    max-width: 100px;
+    /* Limit button width */
+}
+
+.editing-btn {
+    height: 100%;
+    margin-right: 0.5rem;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* filtering option styling */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter {
+    text-align: center;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    opacity: 0.6;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 1rem;
+    margin-left: remrem;
+    display: flex;
+    align-items: center;
+}
+
+
+/*     Styling for scroll bar */
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* WebKit Scrollbar */
+/* Minimalistic Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ff6060 #f1f1f1;
+}
+
+
+/* Responsiveness */
+/* Laptop Responsiveness */
+/* Laptop and Desktop Responsiveness (min-width: 769px) */
+@media (min-width: 769px) {
+
+    /* Navbar Styling */
+    .navbar {
+        height: 4rem;
+        /* Adjust navbar height */
+    }
+
+    .fa-compass {
+        font-size: 2rem;
+        /* Adjust logo size */
+    }
+
+    .navbar-collapse {
+        background-color: transparent;
+        /* Remove background color */
+        padding: 0;
+        /* Remove padding */
+        box-shadow: none;
+        /* Remove shadow */
+    }
+
+    .navbar-nav {
+        width: auto;
+        /* Reset width */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        /* Adjust padding for nav links */
+    }
+
+    .navbar-nav.ms-auto {
+        margin-top: 0;
+        /* Remove margin */
+    }
+
+    /* Search Bar Styling */
+    .search-btn {
+        background-color: #fe424d;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        /* Adjust padding */
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.25rem;
+        /* Adjust search button height */
+    }
+
+    .search-btn:hover {
+        background-color: #fe424d;
+        color: #fff;
+    }
+
+    .search-btn i {
+        display: inline;
+        margin-right: 0.5rem;
+    }
+
+    .search-inp {
+        border-radius: 25px;
+        width: 35rem;
+        /* Adjust search input width */
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        font-size: 0.8rem;
+    }
+
+    /* Listing Cards Styling */
+    .listing-card {
+        margin-bottom: 1.5rem;
+        /* Adjust margin between cards */
+    }
+
+    .card-img-top {
+        height: 18rem;
+        /* Adjust image height */
+    }
+
+    /* Footer Styling */
+    .f-info {
+        height: 6rem;
+        /* Adjust footer height */
+    }
+
+    .f-info-socials i {
+        font-size: 1rem;
+        /* Adjust social icons size */
+    }
+
+    /* Filter Styling */
+    .filter {
+        margin-right: 1.5rem;
+        /* Adjust margin between filters */
+    }
+
+    .filter p {
+        font-size: 0.8rem;
+        /* Adjust filter text size */
+    }
+
+    /* Tax Toggle Styling */
+    .tax-toggle {
+        width: auto;
+        /* Reset width */
+    }
+
+    /* Grid Layout for Listings */
+    .row-cols-lg-3 {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3-column layout for listings */
+    }
+
+    /* Container and Flexbox Adjustments */
+    .container-fluid-self {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .starting {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        height: 3.5rem;
+        /* Further reduce navbar height */
+    }
+
+    .container-fluid-self {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .starting {
+        display: flex;
+    }
+
+    .navbar-collapse {
+        background-color: #ffeff0;
+        /* Set background color for expanded navbar */
+        padding: 1rem;
+        /* Add padding for better spacing */
+        border-radius: 0.5rem;
+        /* Optional: Add rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Optional: Add shadow for better visibility */
+    }
+
+    .navbar-nav {
+        width: 100%;
+        /* Ensure nav items take full width */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        /* Add padding to nav links */
+    }
+
+    .navbar-nav.ms-auto {
+        margin-top: 1rem;
+        /* Add space between nav sections */
+    }
+
+    .fa-compass {
+        font-size: 2rem;
+        /* Further reduce logo size */
+    }
+
+    .search-inp {
+        width: 50%;
+        /* Adjust width as needed */
+    }
+
+    .search-btn {
+        /* padding: 0.5rem 1rem; */
+        height: 2.25rem;
+        justify-content: center;
+        align-items: center;
+        /* Smaller padding */
+    }
+
+    .listing-card {
+        margin-bottom: 1rem;
+        /* Reduce margin between cards */
+    }
+
+    .card-img-top {
+        height: 15rem;
+        /* Adjust image height */
+    }
+
+    .f-info {
+        height: 5rem;
+        /* Further reduce footer height */
+    }
+
+    .f-info-socials i {
+        font-size: 0.9rem;
+        /* Further reduce social icons size */
+    }
+
+    .filter {
+        margin-right: 1rem;
+        /* Further reduce margin between filters */
+    }
+
+    .filter p {
+        font-size: 0.6rem;
+        /* Further reduce filter text size */
+    }
+
+    .tax-toggle {
+        margin-left: 0;
+        /* Remove left margin */
+        width: 100%;
+        /* Full-width tax toggle */
+    }
+
+    /* .row-cols-lg-3 {
+        grid-template-columns: repeat(1, 1fr);
+        Single column layout for listings
+    } */
+}

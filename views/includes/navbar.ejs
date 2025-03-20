@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Brand Logo -->
+    <div>
+      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+      <div class="logo-name">ReeShal</div>
+    </div>
+
+    <!-- Search Form (Always Visible)
+    <form class="d-flex me-2 " role="search" action="/listings/search" novalidate class="needs-validation">
+      <input class="form-control search-inp" type="search" placeholder="Name/District/Country/Facility"
+        name="searchedQuery" required>
+      <button class="btn search-btn ms-2 d-flex" type="submit"><i
+          class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form> -->
+
+    <!-- Navbar Toggler Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- User Actions -->
+      <div class="navbar-nav ms-auto">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+        <a class="nav-link" href="/listings/new">Upload New Post</a>
+        <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } %>
+            <% if(currUser){ %>
+              <a class="nav-link" href="/logout">Log out</a>
+              <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Search Form (Always Visible) -->
+<form class="d-flex me-2 search-form" role="search" action="/listings/search" novalidate class="needs-validation">
+  <input class="form-control search-inp" type="search" placeholder="Name/District/Country/Facility" name="searchedQuery"
+    required>
+  <button class="btn search-btn ms-2 d-flex" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+</form>
